@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập: Tạo form lấy survey khách hàng</title>
+</head>
+<body>
+
+<form action="Tao_form_lay_survey_khach_hang.html" method="post" class="wufoo">
+    <hr>
+    <h2 >Market Research Survey</h2>
+    <p >Please take a few moments to complete this satisfaction survey.</p>
+    <label> <b>What is your age range?</b></label><br>
+        <select style="width: 500px" name="age">
+         <option value="1">18-24</option>
+         <option value="2">25-34</option>
+         <option value="3">35-50</option>
+         <option value="4">50+</option>
+         </select><br>
+    <label> <b>What is yearly income?</b></label><br>
+       <select style="width: 500px" name="income">
+        <option value="1">0$ - 25,000$</option>
+        <option value="2">25001$ - 50,000$</option>
+        <option value="3">50001$ - 100,000$</option>
+        <option value="4">100,000$+</option>
+        </select><br>
+    <label> <b>Gender Identity</b></label><br>
+        <label><input type="radio" name="gender" value="male">Male</label><br>
+        <label><input type="radio" name="gender" value="female">Female</label><br>
+        <label><input type="radio" name="gender" value="nonbinary">Nonbinary</label><br>
+        <label><input type="radio" name="gender" value="other">Other</label><br>
+    <label> <b>Which of the following products have your purchased in the last 2 months. Please check all that apply.</b></label><br>
+        <label><input type="checkbox" name="product">Product 1</label><br>
+        <label><input type="checkbox" name="product">Product 3</label><br>
+        <label><input type="checkbox" name="product">Product 3</label><br>
+    <label> <b>How often would you use our new product?</b></label><br>
+        <label><input type="radio" name="oftenuse">Daily</label><br>
+        <label><input type="radio" name="oftenuse">Weekly</label><br>
+        <label><input type="radio" name="oftenuse">Montly</label><br>
+    <label> <b>What would you pay for the new product?</b></label><br>
+        <table>
+            <tr>
+                <td>$</td>
+                <td> <input style="width: 60px" type="number"></td>
+                <td>.</td>
+                <td><input name="cents" type="number" style="width: 20px"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Dollars</td>
+                <td></td>
+                <td>Cents</td>
+            </tr>
+      </table>
+    <label> <b>What feature you would like to see in the new product</b></label><br>
+    <textarea  cols="100" rows="8"></textarea><br>
+    <label>Please rate your level of agreement with the following statements.</label><br>
+        <table border="1" cellspacing="0" >
+            <tr>
+                <th width="350" style="background-color: darkgray"></th>
+                <th width="180" style="background-color: darkgray">Strongly Disagree</th>
+                <th width="150" style="background-color: darkgray">Disagree</th>
+                <th width="150" style="background-color: darkgray">Agree</th>
+                <th width="180" style="background-color: darkgray">Strongly Disagree</th>
+            </tr>
+            <tr>
+                <td><b>Our products are priced fairly</b></td>
+                <td align="center"><input type="radio" name="check1">
+                    <p style="margin: 0">1</p></td>
+                <td align="center"><input type="radio" name="check1">
+                    <p style="margin: 0">2</p></td>
+                <td align="center"><input type="radio" name="check1">
+                    <p style="margin: 0">3</p></td>
+                <td align="center"><input type="radio" name="check1">
+                    <p style="margin: 0">4</p></td>
+            </tr>
+            <tr>
+                <td><b>Our products are high fairly</b></td>
+                <td align="center"><input type="radio" name="check1">
+                    <p style="margin: 0">1</p></td>
+                <td align="center"><input type="radio" name="check1">
+                    <p style="margin: 0">2</p></td>
+                <td align="center"><input type="radio" name="check1">
+                    <p style="margin: 0">3</p></td>
+                <td align="center"><input type="radio" name="check1">
+                    <p style="margin: 0">4</p></td>
+            </tr>
+            <tr>
+                <td><b>You would recommend our product to a friend or coworker</b></td>
+                <td align="center"><input type="radio" name="check1">
+                    <p style="margin: 0">1</p></td>
+                <td align="center"><input type="radio" name="check1">
+                    <p style="margin: 0">2</p></td>
+                <td align="center"><input type="radio" name="check1">
+                    <p style="margin: 0">3</p></td>
+                <td align="center"><input type="radio" name="check1">
+                    <p style="margin: 0">4</p></td>
+            </tr>
+        </table><br>
+
+    <button type="submit" name="submitbutton">Submit</button>
+    <style>
+        .wufoo {
+            font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;
+        }
+    </style>
+</form>
+</body>
+</html>
