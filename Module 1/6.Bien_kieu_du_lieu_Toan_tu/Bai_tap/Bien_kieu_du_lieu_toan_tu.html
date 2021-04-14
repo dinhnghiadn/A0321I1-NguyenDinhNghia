@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập: Biến, kiểu dữ liệu và toán tử</title>
+</head>
+<body>
+<button type="button" onclick="bai1()">Bài 1: Tính điểm trung bình và tổng điểm</button>
+<script>
+function bai1() {
+    a = parseInt(prompt('Nhập vào điểm Lý'));
+    b = parseInt(prompt('Nhập vào điểm Hóa'));
+    c = parseInt(prompt('Nhập vào điểm Sinh'));
+    avg = (a + b + c)/3;
+    sum = a + b + c;
+    alert('Điểm trung bình là:'+avg);
+    alert('Tổng điểm là:'+sum);
+}
+</script>
+<br>
+<button type="button" onclick="bai2()">Bài 2: Chuyển đổi nhiệt độ</button>
+<script>
+    function bai2() {
+        nhietdoC = parseInt(prompt('Nhập vào độ C:'));
+        nhietdoF = (nhietdoC/5)*9+32;
+        alert('Nhiệt độ F tương ứng là:'+nhietdoF);
+    }
+</script>
+<br>
+<button type="button" onclick="bai3()">Bài 3: Tính diện tích hình tròn</button>
+<script>
+    function bai3() {
+        r = parseInt(prompt('Nhập vào bán kính:'));
+        area = r * r * 3.14;
+        alert('Diện tích hình tròn là:'+area);
+    }
+</script>
+<br>
+<button type="button" onclick="bai4()">Bài 4: Tính chu vi hình tròn</button>
+<script>
+    function bai4() {
+        r2 = parseInt(prompt('Nhập vào bán kính:'));
+        chuvi = 2*r2*3.14;
+        alert('Chu vi hình tròn là:'+chuvi);
+    }
+</script>
+
+</body>
+</html>
