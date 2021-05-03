@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành: Tạo từ điển</title>
+</head>
+<body>
+
+<form action="Tao_tu_dien.html" method="get">
+    <label>Nhập vào từ cần tìm kiếm:</label>
+    <input type="text" id="txtValue">
+    <input type="button" id="btnResult" onclick="findValue()" value="Tìm">
+    <div id=result>
+    </div>
+</form>
+<script>
+    let vietnamese = ['ban', 'ghe', 'but', 'thuoc', 'giao vien', 'hoc sinh'];
+    let english = ['table', 'chair', 'pen', 'ruler', 'teacher', 'student'];
+
+    function findValue() {
+        let vn = "";
+        let check = false;
+        let word = document.getElementById("txtValue").value;
+        for (let i = 0; i < english.length; i++) {
+            if (word === english[i]) {
+                vn = vietnamese[i];
+                check = true
+                break;
+            }
+        }
+        if (check) {
+            document.getElementById("result").innerHTML = "Từ <strong> tiếng việt </strong> tương ứng là: "  + vn;
+        } else {
+            document.getElementById("result").innerHTML= "Không tìm thấy từ !";
+        }
+
+    }
+
+</script>
+</body>
+</html>
