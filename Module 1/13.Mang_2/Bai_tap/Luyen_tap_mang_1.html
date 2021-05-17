@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập: Luyện tập mảng 1</title>
+</head>
+<body>
+<button type="button" onclick="bai1()">Bài 1</button>
+<button type="button" onclick="bai2()">Bài 2</button>
+<button type="button" onclick="bai3()">Bài 3</button>
+<button type="button" onclick="bai4()">Bài 4</button>
+<button type="button" onclick="bai5()">Bài 5</button>
+<button type="button" onclick="bai6()">Bài 6</button>
+<button type="button" onclick="bai7()">Bài 7</button>
+<button type="button" onclick="bai8()">Bài 8</button>
+<button type="button" onclick="bai9()">Bài 9</button>
+<script>
+    function bai1() {
+        let mangSoNguyen = [5, 1, 15, 20, 29, 11, 50, 8, 6, 39];
+        let total = 0;
+        for (let i = 0; i < mangSoNguyen.length; i++) {
+            if (mangSoNguyen[i] > 10) {
+                total += mangSoNguyen[i];
+            }
+        }
+        document.write('Tổng các số nguyên lớn hơn 10 trong mảng: ' + total);
+    }
+
+    function bai2() {
+        let mangSoNguyen = [5, 8, 15, 20, 29, 11, 50, 8, 6, 39];
+        let max = mangSoNguyen[0];
+        let location = 0;
+        for (let i = 1; i < mangSoNguyen.length; i++) {
+            if (mangSoNguyen[i] > max) {
+                max = mangSoNguyen[i];
+                location = i;
+            }
+        }
+        document.write('Số nguyên lớn nhất trong mảng là: ' + max + " ở vị trí " + location);
+    }
+
+    function bai3() {
+        let mangSoNguyen = [5, 8, 15, 20, 29, 12, 51, 8, 6, 62];
+        let max = mangSoNguyen[0];
+        let avg = 0;
+        for (let i = 1; i < mangSoNguyen.length; i++) {
+            avg += mangSoNguyen[i];
+            if (mangSoNguyen[i] > max) {
+                max = mangSoNguyen[i];
+
+            }
+        }
+        document.write('Số nguyên lớn nhất trong mảng là: ' + max + '<br>');
+        document.write('Trung bình cộng: ' + avg / mangSoNguyen.length);
+    }
+
+    function bai4() {
+        let mangSoNguyen = [5, 8, 15, 20, 29, 12, 51, 8, 6, 62];
+        let mangDaoNguoc = mangSoNguyen.reverse();
+        document.write("Mảng đảo ngược là: " + mangDaoNguoc);
+
+    }
+
+    function bai5() {
+        let mangSoNguyen = [5, -8, -15, -20, 29, -12, 51, 8, -6, 62];
+        let count = 0;
+        for (let i = 0; i < mangSoNguyen.length; i++) {
+            if (mangSoNguyen[i] < 0) {
+                count += 1;
+            }
+        }
+        document.write('Tổng các số nguyên âm trong mảng: ' + count);
+    }
+
+    function bai6() {
+        let mangSoNguyen = [5, -8, -15, -20, 29, -12, 51, 8, -6, 62];
+        let a = parseInt(prompt("Nhập vào số nguyên cần tìm:"));
+        let check = false;
+        for (let i = 0; i < mangSoNguyen.length; i++) {
+            if (mangSoNguyen[i] === a) {
+                document.write('Tìm thấy số nguyên ' + a + ' ở vị trí ' + i);
+                check = true;
+            }
+        }
+        if (check === false) {
+            document.write('Không tìm thấy số nguyên ' + a + ' trong mảng');
+        }
+    }
+
+    function bai7() {
+        let mangSoNguyen = [5, -8, -15, -20, 29, -12, 51, 8, -6, 62];
+        let a = parseInt(prompt("Nhập vào số nguyên cần tìm:"));
+        let check = false;
+        for (let i = 0; i < mangSoNguyen.length; i++) {
+            if (mangSoNguyen[i] === a) {
+                document.write('Tìm thấy số nguyên ' + a + ' ở vị trí ' + i + '<br>');
+                mangSoNguyen.splice(i, 1);
+                check = true;
+            }
+        }
+        if (check === false) {
+            document.write('Không tìm thấy số nguyên ' + a + ' trong mảng');
+        } else document.write('Mảng sau khi xóa phần tử: ' + mangSoNguyen);
+    }
+
+    function bai8() {
+        let mangSoNguyen = [5, -8, -15, -20, 29, -12, 51, 8, -6, 62];
+        mangSoNguyen.sort(function (a, b) {
+            return b - a;
+        })
+        document.write("Mảng sau khi sắp xếp: "+mangSoNguyen);
+    }
+    function bai9() {
+        let mangSoNguyen1 = [5, -8, -15, -20, 29, -12, 51, 8, -6, 62];
+        let mangSoNguyen2 = [10, -2, 3, 1, 9, -14,21, 28, 36, 20];
+        let mangSoNguyen3 = [5,8,4,1,2,56,7,54,41,22,61,67,85,12,53,15,84,21,74,51];
+        mang1 = mangSoNguyen3.concat(mangSoNguyen1.concat(mangSoNguyen2));
+        document.write("Mảng sau khi ghép: "+mang1);
+    }
+</script>
+
+</body>
+</html>
