@@ -125,7 +125,24 @@
         document.write(reverse(array));
 
     }
+    function bai9() {
+        function checkarray(array, a) {
+            let count = 0;
+            for (let i = 0; i < array.length; i++) {
+                let arraynew = array[i].split("");
+                for (let j = 0; j < arraynew.length; j++) {
+                    if (arraynew[j] == a) {
+                        count += 1;
+                    }
+                }
+            }
+            return count;
+        }
 
+        let array = ['abcxyz', 'fanba', 'bcsa', 'aka', 'yuuo'];
+        let a = prompt("Mời nhập ký tự cần tìm:");
+        document.write("Số lần xuất hiện: " + checkarray(array, a));
+    }
 </script>
 
 </body>

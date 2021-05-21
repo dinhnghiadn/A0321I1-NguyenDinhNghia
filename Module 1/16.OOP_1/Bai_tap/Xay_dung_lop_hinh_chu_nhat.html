@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập: Xây dựng lớp hình chữ nhật</title>
+</head>
+<body>
+<canvas id="myCanvas" width="400" height="400">
+</canvas>
+<script>
+    class Reactangle {
+        constructor(width,length) {
+            this.width = width;
+            this.length = length;
+        }
+        calArea(){
+            return this.length*this.width;
+        }
+        calPerimeter(){
+            return (this.width+this.length)*2;
+        }
+        setRec(width,length){
+            this.width = width;
+            this.length = length;
+        }
+
+        drawRec(){
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext('2d');
+            ctx.fillStyle='#fa4575';    // chọn màu
+            ctx.fillRect(10, 40, this.width, this.length); // vẽ hcn
+        }
+    }
+    let hinhchunhat1 = new Reactangle(400,200);
+    hinhchunhat1.setRec(100,200);
+    hinhchunhat1.drawRec();
+    console.log(+hinhchunhat1.calArea());
+    console.log((+hinhchunhat1.calArea()));
+
+
+
+</script>
+</body>
+</html>
