@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    function reName(name) {
+        name = name.trim().toLocaleLowerCase();
+        let nameArray = Array.from(name);
+        for (let i = 0; i < nameArray.length - 1; i++) {
+            if (nameArray[i] === " " && nameArray[i + 1] === " ") {
+                for (let j = i + 1; j < nameArray.length - 1; j++) {
+                    nameArray[j] = nameArray[j + 1];
+                }
+                i--;
+                nameArray.pop();
+            }
+
+        }
+        nameArray[0] = nameArray[0].toUpperCase();
+        for (let i = 0; i < nameArray.length; i++) {
+            if (nameArray[i] === " ") {
+                nameArray[i + 1] = nameArray[i + 1].toLocaleUpperCase();
+
+            }
+        }
+        return nameArray.join("");
+    }
+    function maxLength(name) {
+        let arr = name.split(" ");
+        let maxName = arr[0];
+        for (let i = 1; i < arr.length; i++) {
+            if (maxName.length < arr[i].length) {
+                maxName = arr[i];
+            }
+        }
+        return maxName;
+    }
+    let name = prompt("Nhập vào tên:");
+    alert("Tên ban đầu là:" +name +
+        "\n Tên đã chuẩn hóa là: " +reName(name)+
+        "\n Từ có độ dài lớn nhất là: " +maxLength(reName(name)));
+
+</script>
+</body>
+</html>

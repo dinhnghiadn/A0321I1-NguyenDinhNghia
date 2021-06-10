@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    function createMatrix() {
+        let m = parseInt(prompt("Mời nhập vào số dòng của ma trận:"));
+        let n = parseInt(prompt("Mời nhập vào số cột của ma trận:"));
+        let array = [];
+        for (let i = 0; i < m; i++) {
+            let row = [];
+            for (let j = 0; j < n; j++) {
+                row[j] = parseInt(prompt("Mời nhập vào phần tử [" + i + "][" + j + "] của ma trận:"));
+            }
+            array[i] = row;
+        }
+        return array;
+    }
+
+    function totalEven(array) {
+        let total = 0;
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (array[i][j] % 2 === 0) {
+                    total += array[i][j];
+                }
+            }
+        }
+        return total;
+    }
+    let array = createMatrix();
+    document.write("Tổng của các số chẵn trong ma trận là: " +totalEven(array));
+</script>
+</body>
+</html>

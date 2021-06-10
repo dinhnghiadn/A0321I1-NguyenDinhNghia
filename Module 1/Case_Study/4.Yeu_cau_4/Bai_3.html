@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    function kiTuChungHaiMang(str1, str2) {
+        let arr1 = str1.split("");
+        let arr2 = str2.split("");
+        let arr3 = [];
+        for (let i = 0; i < arr1.length; i++) {
+            for (let j = 0; j < arr2.length; j++) {
+                if (arr1[i] === arr2[j]) {
+                    arr3.push(arr1[i]);
+                    break;
+                }
+            }
+        }
+        return arr3.length;
+
+    }
+    let str1 = prompt("Nhập chuỗi 1:");
+    let str2 = prompt("Nhập chuỗi 2:");
+    alert("Số ký tự chung là: " +kiTuChungHaiMang(str1,str2));
+</script>
+</body>
+</html>

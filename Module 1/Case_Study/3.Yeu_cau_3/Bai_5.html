@@ -8,6 +8,42 @@
 <script>
     let menu = 'Mời chọn số để gọi thức uống:\n1.Cafe\n2.Cam vắt\n3.Nước ép cà rốt\n4.Nước ép cà chua\n5.Nước dừa\n6.Nước lọc\n7.Thoát chọn món';
     alert(menu);
+    let a = parseInt(prompt("Nhập lựa chọn:"));
+    let total = 0 ;
+    while  ( a != 7  ) {
+        if ( a == 1){
+            let qt = parseInt(prompt("Nhập số lượng cần gọi (giá 10000d/đv):"));
+            total += 10000*qt;
+            alert("Đã gọi thành công " +qt +" Cafe!");
+        }
+        if ( a == 2){
+            let qt = parseInt(prompt("Nhập số lượng cần gọi (giá 18000d/đv):"));
+            total += 15000*qt;
+            alert("Đã gọi thành công " +qt +" Cam vắt!");
+        }
+        if ( a == 3){
+            let qt = parseInt(prompt("Nhập số lượng cần gọi (giá 12000d/đv):"));
+            total += 12000*qt;
+            alert("Đã gọi thành công " +qt +" Nước ép cà rốt!");
+        }
+        if ( a == 4){
+            let qt = parseInt(prompt("Nhập số lượng cần gọi (giá 15000d/đv):"));
+            total += 15000*qt;
+            alert("Đã gọi thành công " +qt +" Nước ép cà chua!");
+        }
+        if ( a == 5){
+            let qt = parseInt(prompt("Nhập số lượng cần gọi (giá 20000d/đv):"));
+            total += 20000*qt;
+            alert("Đã gọi thành công " +qt +" Nước dừa!");
+        }
+        if ( a == 6){
+            let qt = parseInt(prompt("Nhập số lượng cần gọi (giá 8000d/đv):"));
+            total += 8000*qt;
+            alert("Đã gọi thành công " +qt +" Nước lọc!");
+        }
+        a = parseInt(prompt("Nhập lựa chọn tiếp theo:\n1.Cafe\n2.Cam vắt\n3.Nước ép cà rốt\n4.Nước ép cà chua\n5.Nước dừa\n6.Nước lọc\n7.Thoát chọn món và thanh toán"));
+    }
+    document.write("Tổng tiền cần thanh toán: "+total+ " đồng!" );
 </script>
 </body>
 </html>

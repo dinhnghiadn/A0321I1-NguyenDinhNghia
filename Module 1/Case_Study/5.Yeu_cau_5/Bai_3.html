@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    function createMatrix() {
+        let m = parseInt(prompt("Mời nhập vào số dòng của ma trận:"));
+        let n = parseInt(prompt("Mời nhập vào số cột của ma trận:"));
+        let array = [];
+        for (let i = 0; i < m; i++) {
+            let row = [];
+            for (let j = 0; j < n; j++) {
+                row[j] = parseInt(prompt("Mời nhập vào phần tử [" + i + "][" + j + "] của ma trận:"));
+            }
+            array[i] = row;
+        }
+        return array;
+    }
+
+    function findMax(array) {
+        let max = array[0][0];
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (max < array[i][j]) {
+                    max = array[i][j];
+                }
+            }
+        }
+        return max;
+    }
+
+    function findMin(array) {
+        let min = array[0][0];
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (min > array[i][j]) {
+                    min = array[i][j];
+                }
+            }
+        }
+        return min;
+    }
+    let array = createMatrix();
+    document.write("Phần tử lớn nhất trong mảng: "+findMax(array) +"<br>");
+    document.write("Phần tử nhỏ nhất trong mảng: "+findMin(array));
+
+</script>
+</body>
+</html>
