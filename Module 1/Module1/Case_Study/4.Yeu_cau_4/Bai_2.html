@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    function soKyTuKhacNhau(str) {
+        let arr = [];
+        for (i = 0; i < str.length; i++) {
+            if (arr.indexOf(str.charAt(i)) === -1) {
+                arr.push(str.charAt(i));
+            }
+        }
+        return arr;
+    }
+    let str = prompt("Nhập vào chuỗi ký tự: ");
+    alert("Có " +soKyTuKhacNhau(str).length + " ký tự khác nhau là: " +soKyTuKhacNhau(str)  );
+</script>
+</body>
+</html>

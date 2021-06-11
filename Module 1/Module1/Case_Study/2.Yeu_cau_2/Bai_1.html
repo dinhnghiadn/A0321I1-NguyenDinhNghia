@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("Mời nhập lương(VNĐ):"));
+    let thueThuNhap;
+    if (a >= 15000000) {
+        thueThuNhap = a*0.2;
+    } else if (a >= 7000000) {
+        thueThuNhap = a*0.1;
+    } else thueThuNhap = a*0.05;
+    alert("Thuế thu nhập cá nhân là: "+thueThuNhap+ "VNĐ");
+    alert("Lương thực nhận là: " +(a - thueThuNhap)+ "VNĐ");
+</script>
+</body>
+</html>

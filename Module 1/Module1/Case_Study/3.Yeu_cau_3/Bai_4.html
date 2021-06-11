@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    let a = prompt("Mời nhập số: ");
+    let b = a.split("");
+    let c = '';
+    for (let i = 0; i < b.length; i++) {
+        switch (b[i]) {
+            case '0':
+                c += 'không ';
+                break;
+            case '1':
+                c += 'một ';
+                break;
+            case '2':
+                c += 'hai ';
+                break;
+            case '3':
+                c += 'ba ';
+                break;
+            case '4':
+                c += 'bốn ';
+                break;
+            case '5':
+                c += 'năm ';
+                break;
+            case '6':
+                c += 'sáu ';
+                break;
+            case '7':
+                c += 'bảy ';
+                break;
+            case '8':
+                c += 'tám ';
+                break;
+            case '9':
+                c += 'chín ';
+                break;
+
+        }
+    }
+    document.write(c);
+</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập: Luyện tập cấu trúc điều kiện 1</title>
+</head>
+<body>
+<button type="button" id="b1" onclick="bai1()">Bài 1</button>
+<button type="button" id="b2" onclick="bai2()">Bài 2</button>
+<button type="button" id="b3" onclick="bai3()">Bài 3</button>
+<button type="button" id="b4" onclick="bai4()">Bài 4</button>
+<button type="button" id="b5" onclick="bai5()">Bài 5</button>
+<button type="button" id="b6" onclick="bai6()">Bài 6</button>
+<button type="button" id="b7" onclick="bai7()">Bài 7</button>
+
+<script>
+    function bai1() {
+        let a = parseInt(prompt('Nhập vào số a:'));
+        let b = parseInt(prompt('Nhập vào số b:'));
+        if (a % b === 0) {
+            document.write("a chia hết cho b");
+        } else document.write("a không chia hết cho b");
+    }
+
+    function bai2() {
+        let a = parseInt(prompt('Nhập vào số số tuổi:'));
+        if (a >= 15) {
+            document.write("Đủ tuổi học lớp 10!");
+        } else document.write("Không đủ tuổi học lớp 10!");
+    }
+
+    function bai3() {
+        let a = parseInt(prompt('Nhập vào số nguyên bất kỳ:'));
+        if (a > 0) {
+            document.write("Số đã nhập lớn hơn 0");
+        } else if (a === 0)
+            document.write("Số đã nhập là số 0");
+        else document.write("Số đã nhập bé hơn 0");
+    }
+
+    function bai4() {
+        let a = parseInt(prompt('Nhập vào số a:'));
+        let b = parseInt(prompt('Nhập vào số b:'));
+        let c = parseInt(prompt('Nhập vào số c:'));
+        let max = a;
+        if (b > a) {
+            max = b;
+        }
+        if (c > max) {
+            max = c;
+        }
+        document.write("Số lớn nhất trong a, b, c là: " +max);
+    }
+    function bai5() {
+        let a = parseInt(prompt('Nhập vào số điểm kiểm tra:'));
+        let b = parseInt(prompt('Nhập vào số điểm giữa kỳ:'));
+        let c = parseInt(prompt('Nhập vào số điểm cuối kỳ:'));
+        let grade =  (a*2 + b*3 + c*5)/10;
+        if (grade >= 8) {
+            document.write("Học lực giởi");
+        }
+        else if (grade >= 6) {
+            document.write("Học lực khá");
+        }
+        else document.write("Học lực trung bình yếu");
+    }
+    function bai6() {
+        let a = parseInt(prompt('Nhập vào doanh số tháng 1:'));
+        let b = parseInt(prompt('Nhập vào doanh số tháng 2:'));
+        let c = parseInt(prompt('Nhập vào doanh số tháng 3:'));
+        let total = a + b + c;
+        if (total >= 60) {
+            let bonus = total * 0.07;
+            document.write("Mức hoa hồng là 7%:"+bonus);
+        }
+        else if (total >= 40) {
+            let bonus = total * 0.05;
+            document.write("Mức hoa hồng là 5%"+bonus);
+        }
+        else document.write("Không được nhận hoa hồng");
+    }
+    function bai7() {
+        let a = parseInt(prompt('Nhập vào số phút nghe điện thoại tuần 1:'));
+        let b = parseInt(prompt('Nhập vào số phút nghe điện thoại tuần 2:'));
+        let c = parseInt(prompt('Nhập vào số phút nghe điện thoại tuần 3:'));
+        let d = parseInt(prompt('Nhập vào số phút nghe điện thoại tuần 4:'));
+        let total = a + b + c + d;
+        if (total >= 100) {
+            let fee = total * 5000;
+            document.write("Cước điện thoại là:"+fee);
+        }
+        else if (total >= 40) {
+            let fee = total * 4000;
+            document.write("Cước điện thoại là:"+fee);
+        }
+        else{
+            let fee = total * 3000;
+            document.write("Cước điện thoại là:"+fee);
+        }
+    }
+</script>
+
+
+</body>
+</html>
