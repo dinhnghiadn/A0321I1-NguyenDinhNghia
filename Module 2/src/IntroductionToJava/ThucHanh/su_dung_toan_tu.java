@@ -1,7 +1,7 @@
-package Introduction_to_Java.Thuc_hanh;
+package IntroductionToJava.ThucHanh;
 import java.util.Scanner;
 
-public class Su_dung_toan_tu {
+public class su_dung_toan_tu {
 
     public static void main(String[] args) {
         float width;

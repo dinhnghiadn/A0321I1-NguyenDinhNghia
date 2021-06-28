@@ -1,8 +1,8 @@
-package Introduction_to_Java.Thuc_hanh;
+package IntroductionToJava.ThucHanh;
 
 import java.util.Scanner;
 
-public class Tinh_so_ngay_trong_thang {
+public class tinh_so_ngay_trong_thang {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);

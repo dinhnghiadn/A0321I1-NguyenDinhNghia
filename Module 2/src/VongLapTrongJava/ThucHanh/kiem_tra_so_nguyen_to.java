@@ -1,8 +1,8 @@
-package Vong_lap_trong_Java.Thuc_hanh;
+package VongLapTrongJava.ThucHanh;
 
 import java.util.Scanner;
 
-public class Kiem_tra_so_nguyen_to {
+public class kiem_tra_so_nguyen_to {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a number:");

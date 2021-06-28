@@ -1,8 +1,8 @@
-package Vong_lap_trong_Java.Thuc_hanh;
+package VongLapTrongJava.ThucHanh;
 
 import java.util.Scanner;
 
-public class Tinh_tien_lai_cho_vay {
+public class tinh_tien_lai_cho_vay {
     public static void main(String[] args) {
         double money = 1.0;
         int month = 1;

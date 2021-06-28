@@ -1,8 +1,8 @@
-package Introduction_to_Java.Thuc_hanh;
+package IntroductionToJava.ThucHanh;
 
 import java.util.Scanner;
 
-public class Kiem_tra_nam_nhuan {
+public class kiem_tra_nam_nhuan {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int year;

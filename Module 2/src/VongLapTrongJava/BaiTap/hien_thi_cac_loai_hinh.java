@@ -1,5 +1,5 @@
-package Vong_lap_trong_Java.Bai_tap;
-public class Hien_thi_cac_loai_hinh {
+package VongLapTrongJava.BaiTap;
+public class hien_thi_cac_loai_hinh {
     public static void main(String[] args) {
         java.util.Scanner sc = new java.util.Scanner(System.in);
         System.out.println("-----Menu design-----");

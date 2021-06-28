@@ -1,8 +1,8 @@
-package Introduction_to_Java.Thuc_hanh;
+package IntroductionToJava.ThucHanh;
 
 import java.util.Scanner;
 
-public class Tinh_chi_so_can_nang {
+public class tinh_chi_so_can_nang {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         double weight, height, bmi;

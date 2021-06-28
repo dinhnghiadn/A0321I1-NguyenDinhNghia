@@ -1,7 +1,7 @@
-package Introduction_to_Java.Bai_tap;
+package IntroductionToJava.BaiTap;
 import java.util.Scanner;
 
-public class Chuyen_doi_tien_te {
+public class chuyen_doi_tien_te {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Tỉ giá hiện hành là 23.025VNĐ/USD");

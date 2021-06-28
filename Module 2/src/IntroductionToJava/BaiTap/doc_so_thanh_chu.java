@@ -1,8 +1,8 @@
-package Introduction_to_Java.Bai_tap;
+package IntroductionToJava.BaiTap;
 
 import java.util.Scanner;
 
-public class Doc_so_thanh_chu {
+public class doc_so_thanh_chu {
     final static String[] ONES = {" "," ONE"," TWO"," THREE"," FOUR"," FIVE"," SIX"," SEVEN"," EIGHT"," NINE"," TEN",
                                 " ELEVEN"," TWELVE"," THIRTEEN"," FOURTEEN"," FIFTEEN"," SIXTEEN", "SEVENTEEN"," EIGHTEEN"," NINETEEN"};
     final static String[] TENS = {" ", " ", " TWENTY"," THIRTY"," FOURTY"," FIFTY"," SIXTY"," SEVENTY"," EIGHTY"," NINETY"};
