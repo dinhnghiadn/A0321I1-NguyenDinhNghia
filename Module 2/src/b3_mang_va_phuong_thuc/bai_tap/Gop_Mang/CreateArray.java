@@ -3,7 +3,8 @@ package b3_mang_va_phuong_thuc.bai_tap.Gop_Mang;
 import java.util.Scanner;
 
 public class CreateArray {
-     public static int[] createArray(){
+
+    public static int[] createArray(){
         int size;
         int[] array;
         Scanner scanner = new Scanner(System.in);
