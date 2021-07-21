@@ -8,7 +8,7 @@ public class Main {
         for (Animal animal : animals) {
             System.out.println(animal.makeSound());
             if (animal instanceof Chicken) { // nếu animal là 1 đối tượng chicken
-                Edible edibler = (Chicken) animal; // ép kiểu tường minh về kiểu dữ liệu chicken (con)
+                Edible edibler = (Chicken) animal; // ép kiểu tường minh về kiểu dữ liệu chicken (con) để gọi được phương thức riêng ở lớp Chicken
                 System.out.println(edibler.howToEat());
             }
         }
