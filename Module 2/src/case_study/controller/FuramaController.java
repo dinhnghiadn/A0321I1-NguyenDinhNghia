@@ -1,7 +1,6 @@
 package case_study.controller;
 
-import case_study.services.Impl.CustomerServiceImpl;
-import case_study.services.Impl.EmployeeServiceImpl;
+import case_study.services.Impl.*;
 
 import java.util.Scanner;
 
@@ -10,6 +9,7 @@ public class FuramaController {
 
         displayMainMenu();
     }
+
     public static void displayMainMenu() {
         boolean check = true;
         while (check) {
@@ -20,7 +20,12 @@ public class FuramaController {
             System.out.println("5.Promotion Management");
             System.out.println("6.Exit");
             Scanner scanner = new Scanner(System.in);
-            int option = Integer.parseInt(scanner.nextLine());
+            int option = 0;
+            try {
+                option = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Bạn đã nhập sai định dạng, vui lòng nhập lại");
+            }
             switch (option) {
                 case 1:
                     displayEmployeeMenu();
@@ -54,18 +59,23 @@ public class FuramaController {
             System.out.println("3.Edit employee");
             System.out.println("4.Return main menu");
             Scanner scanner = new Scanner(System.in);
-            int option = Integer.parseInt(scanner.nextLine());
+            int option = 0;
+            try {
+                option = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Bạn đã nhập sai định dạng, vui lòng nhập lại");
+            }
             switch (option) {
-                case 1 :
+                case 1:
                     employeeService.display();
                     break;
-                case 2 :
+                case 2:
                     employeeService.addNew();
                     break;
-                case 3 :
+                case 3:
                     employeeService.edit();
                     break;
-                case 4 :
+                case 4:
                     displayMainMenu();
                     break;
 
@@ -83,18 +93,23 @@ public class FuramaController {
             System.out.println("3.Edit customer");
             System.out.println("4.Return main menu");
             Scanner scanner = new Scanner(System.in);
-            int option = Integer.parseInt(scanner.nextLine());
+            int option = 0;
+            try {
+                option = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Bạn đã nhập sai định dạng, vui lòng nhập lại");
+            }
             switch (option) {
-                case 1 :
+                case 1:
                     customerService.display();
                     break;
-                case 2 :
+                case 2:
                     customerService.addNew();
                     break;
-                case 3 :
+                case 3:
                     customerService.edit();
                     break;
-                case 4 :
+                case 4:
                     displayMainMenu();
                     break;
 
@@ -105,6 +120,7 @@ public class FuramaController {
     }
 
     public static void displayFacilityMenu() {
+        FacilityServiceImpl facilityService = new FacilityServiceImpl();
         boolean check = true;
         while (check) {
             System.out.println("1.Display list facility");
@@ -112,9 +128,56 @@ public class FuramaController {
             System.out.println("3.Display list facility maintaince");
             System.out.println("4.Return main menu");
             Scanner scanner = new Scanner(System.in);
-            int option = Integer.parseInt(scanner.nextLine());
+            int option = 0;
+            try {
+                option = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Bạn đã nhập sai định dạng, vui lòng nhập lại");
+            }
             switch (option) {
-                case 1 :
+                case 1:
+                    facilityService.display();
+                    break;
+                case 2:
+                    addNewFacilityMenu();
+                    break;
+
+
+            }
+
+        }
+    }
+
+    public static void addNewFacilityMenu() {
+        FacilityServiceImpl facilityService = new FacilityServiceImpl();
+        boolean check = true;
+        while (check) {
+            System.out.println("1.Add new Villa");
+            System.out.println("2.Add new House");
+            System.out.println("3.Add new Room");
+            System.out.println("4.Return facility menu");
+            Scanner scanner = new Scanner(System.in);
+            int option = 0;
+            try {
+                option = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Bạn đã nhập sai định dạng, vui lòng nhập lại");
+            }
+            switch (option) {
+                case 1:
+                    facilityService.addNewVilla();
+                    displayFacilityMenu();
+                    break;
+                case 2:
+                    facilityService.addNewHouse();
+                    displayFacilityMenu();
+                    break;
+                case 3:
+                    facilityService.addNewRoom();
+                    displayFacilityMenu();
+                    break;
+                case 4:
+                    displayFacilityMenu();
                     break;
 
 
@@ -124,6 +187,8 @@ public class FuramaController {
     }
 
     public static void displayBookingMenu() {
+        BookingServiceImpl bookingService = new BookingServiceImpl();
+        ContractServiceImpl contractService = new ContractServiceImpl();
         boolean check = true;
         while (check) {
             System.out.println("1.Add new booking");
@@ -133,10 +198,28 @@ public class FuramaController {
             System.out.println("5.Edit contract");
             System.out.println("6.Return main menu");
             Scanner scanner = new Scanner(System.in);
-            int option = Integer.parseInt(scanner.nextLine());
+            int option = 0;
+            try {
+                option = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Bạn đã nhập sai định dạng, vui lòng nhập lại");
+            }
             switch (option) {
-                case 1 :
+                case 1:
+                    bookingService.addBooking();
                     break;
+                case 2:
+                    bookingService.displayListBooking();
+                    break;
+                case 3:
+                    contractService.createNewContract();
+                    break;
+                case 4:
+                    contractService.displayListContract();
+                    break;
+
+
+
 
 
             }
@@ -151,9 +234,14 @@ public class FuramaController {
             System.out.println("2.Display list customers get voucher");
             System.out.println("3.Return main menu");
             Scanner scanner = new Scanner(System.in);
-            int option = Integer.parseInt(scanner.nextLine());
+            int option = 0;
+            try {
+                option = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Bạn đã nhập sai định dạng, vui lòng nhập lại");
+            }
             switch (option) {
-                case 1 :
+                case 1:
                     break;
 
 

@@ -27,11 +27,16 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void addNew() {
         System.out.println("Nhập id:");
-        int id = Integer.parseInt(scanner.nextLine());
+        int id = 0;
+        try {
+            id = Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Bạn đã nhập sai định dạng, vui lòng nhập lại");
+        }
         System.out.println("Nhập tên:");
         String name = scanner.nextLine();
         System.out.println("Nhập tuổi:");
-        int age = Integer.parseInt(scanner.nextLine());
+        String age = scanner.nextLine();
         System.out.println("Nhập giới tính:");
         String sex = scanner.nextLine();
         System.out.println("Nhập số CMND:");
@@ -53,7 +58,12 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void edit() {
         System.out.println("Nhập id khách hàng cần chỉnh sửa:");
-        int id = Integer.parseInt(scanner.nextLine());
+        int id = 0;
+        try {
+            id = Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Bạn đã nhập sai định dạng, vui lòng nhập lại");
+        }
         for (Customer customer : customerList) {
             if (customer.getId() == id) {
                 System.out.println("Nhập thông tin muốn chỉnh sửa:" +
@@ -66,7 +76,13 @@ public class CustomerServiceImpl implements CustomerService {
                         "\n 7.Email " +
                         "\n 8.Type Customer " +
                         "\n 9.Address ");
-                int choice = Integer.parseInt(scanner.nextLine());
+                int choice = 0;
+                try {
+                    choice = Integer.parseInt(scanner.nextLine());
+                } catch (NumberFormatException e) {
+                    System.out.println("Bạn đã nhập sai định dạng, vui lòng nhập lại");
+
+                }
                 switch (choice){
                     case 1:
                         System.out.println("Nhập id mới:");
@@ -80,7 +96,7 @@ public class CustomerServiceImpl implements CustomerService {
                         break;
                     case 3:
                         System.out.println("Nhập tuổi mới:");
-                        int age = Integer.parseInt(scanner.nextLine());
+                        String age = scanner.nextLine();
                         customer.setAge(age);
                         break;
                     case 4:

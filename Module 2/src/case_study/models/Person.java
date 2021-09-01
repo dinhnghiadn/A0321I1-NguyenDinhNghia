@@ -1,15 +1,17 @@
 package case_study.models;
 
-public abstract class Person {
+import java.io.Serializable;
+
+public abstract class Person implements Serializable {
     private int id;
     private String name;
-    private int age;
+    private String age;
     private String sex;
     private String idCard;
     private String phone;
     private String email;
 
-    public Person(int id, String name, int age, String sex, String idCard,String phone, String email) {
+    public Person(int id, String name, String age, String sex, String idCard,String phone, String email) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -38,11 +40,11 @@ public abstract class Person {
         this.name = name;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
