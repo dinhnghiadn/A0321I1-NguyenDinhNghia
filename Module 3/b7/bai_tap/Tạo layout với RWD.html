@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo layout với RWD</title>
+    <style>
+        body{
+            margin:0 auto;
+            font-family: Calibri;
+
+        }
+
+        #login{
+            float: right;
+        }
+
+        #s-body, #footer{
+            width: 100%;
+            margin-bottom:5px;
+            clear: both;
+            border: 1px solid beige;
+
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 10px;
+            color: darkgray;
+            font-size: 25px;
+
+        }
+        .nav {
+            background-color: black;
+            width: 100%;
+            height: 60px;
+            padding: 10px;
+        }
+        div ul li {
+            list-style: none;
+            margin: 15px;
+        }
+        a {
+          text-decoration: none;
+            font-size: 20px;
+        }
+
+         /*Tất cả các màn hình có độ phân giải thấp nhất là 1001px*/
+        @media all and (min-width: 1001px){
+            body{
+                width: 100%;
+                font-size: 14px;
+            }
+
+
+            #left{
+                width: 20%;
+                min-height: 600px;
+                float:left;
+                background-color: #CDCDCD;
+                display: flex;
+                justify-content: center;
+                box-sizing: border-box;
+            }
+
+
+
+            #content{
+                width: 60%;
+                min-height: 600px;
+                float:left;
+                padding: 5px;
+                box-sizing: border-box;
+                word-break: break-all;
+            }
+
+            #right{
+                width: 20%;
+                min-height: 600px;
+                float:right;
+                background-color:  #CDCDCD;
+                box-sizing: border-box;
+
+            }
+
+            #ads {
+                width: 200px;
+                height: 80px;
+                background-color: white;
+                border: solid 1px black;
+                margin: 0 auto;
+                margin-bottom: 5px;
+                text-align: center;
+            }
+
+            #footer{
+                height: 50px;
+                clear: both;
+                background-color: dimgray;
+
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+<nav class="nav">
+    <ul>
+        <li>Logo</li>
+        <li>Home</li>
+        <li>Abouts</li>
+        <li>Projects</li>
+        <li>Contact</li>
+        <li id = "login">Login</li>
+    </ul>
+</nav>
+
+<div id="main">
+    <div id="s-body">
+        <div id="left">
+            <ul>
+                <li><a href="#link">Link</a> </li>
+                <li><a href="#link">Link</a> </li>
+                <li><a href="#link">Link</a> </li>
+            </ul>
+        </div>
+        <div id="content">
+            <h1>Welcome</h1>
+            <p>Text ababcaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.</p>
+            <h1>Test</h1>
+            <p>Text ababcaaaaaaaaaaaaaaaaaaaaaa.</p>
+        </div>
+        <div id="right">
+            <div id="ads"><p>ADS</p></div>
+            <div id="ads"><p>ADS</p></div>
+            <div id="ads"><p>ADS</p></div>
+
+        </div>
+    </div>
+    <div id="footer">
+    </div>
+</div>
+</body>
+</html>
