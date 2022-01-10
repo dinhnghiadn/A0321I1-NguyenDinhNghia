@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../assert/bootstrap/css/bootstrap.min.css">
+<!--    <link rel="stylesheet" href="../assert/css/furama.css">-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+</head>
+<body>
+<div class="notify">
+    <div th:if="${success}">
+        <span th:text="${success}"></span>
+    </div>
+</div>
+<div id="searchTable">
+    <div th:insert="~{/index::header}"></div>
+    <a href="/" class="btn btn-success mt-3">Back Home</a>
+    <a th:if="${#request.userPrincipal != null}" th:href="@{/logout}" class="btn btn-success mt-3 ml-1">Logout</a>
+    <br/>
+    <h1>List Employee</h1>
+<!--    <div class="alert alert-danger alert-dismissible" th:if="${message}">-->
+<!--        <p th:if="${message}" th:text="${message}"></p>-->
+<!--        &lt;!&ndash;        <button type="button" class="close" data-dismiss="alert">&times;</button>&ndash;&gt;-->
+<!--    </div>-->
+    <a href="/showCreateEmployee" class="btn btn-outline-dark">Create</a>
+    <br/>
+    Search by name:
+    <input type="text" name="nameEmployee" id="nameEmployee"/>
+    <button class="btn btn-search btn-outline-dark">Search</button>
+    <br/>
+    <div>
+        <table cellspacing="2" class="table table-hover">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Employee's name</th>
+                <th scope="col">Birthday</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">Employee's position</th>
+                <th scope="col">Employee's Education Degree</th>
+                <th scope="col">Employee's Division</th>
+                <th scope="col" colspan="3" style="text-align: center">Action</th>
+            </tr>
+            </thead>
+
+            <tbody id="result">
+            <tr th:each="employee:${listEmployee}">
+                <td th:text="${employee.employeeName}"></td>
+                <td th:text="${employee.employeeBirthday}"></td>
+                <td th:text="${employee.employeePhone}"></td>
+                <td th:text="${employee.employeeEmail}"></td>
+                <td th:text="${employee.employeeAddress}"></td>
+                <td th:text="${employee.position.getPositionName()}"></td>
+                <td th:text="${employee.educationDegree.getEducationDegreeName()}"></td>
+                <td th:text="${employee.division.getDivisionName()}"></td>
+                <td>
+                    <a class="btn btn-outline-dark" th:href="@{/view/__${employee.employeeId}__}">View</a>
+                </td>
+                <td>
+                    <a class="btn btn-outline-dark" th:href="@{/edit/__${employee.employeeId}__}">Update</a>
+                </td>
+                <td>
+                    <a class="btn btn-outline-dark" th:href="@{/delete/__${employee.employeeId}__}">Delete</a>
+                    <!--                <a class="btn btn-outline-dark"  th:href="@{/delete/__${employee.employeeId}__}">Delete</a>-->
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a th:href="@{'/listEmployee'(page=${listEmployee.number - 1})}"
+           th:if="${listEmployee.hasPrevious()}" class="btn btn-primary">Previous</a>
+        <span th:text="${listEmployee.number+1}"></span>/<span th:text="${listEmployee.totalPages}"></span>
+        <a th:href="@{'/listEmployee'(page=${listEmployee.number + 1})}"
+           th:if="${listEmployee.hasNext()}" class="btn btn-primary">Next</a>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Body
+            </div>
+            <div class="modal-footer">
+                <!--                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+                <!--                <button type="button" class="btn btn-primary">Save changes</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--<script src="/assert/js/jquery.js"></script>-->
+<!--<script src="/assert/js/list.js"></script>-->
+<script src="/assert/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
