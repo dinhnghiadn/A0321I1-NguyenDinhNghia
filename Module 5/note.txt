@@ -1,0 +1,13 @@
+dependencies:
+ "bootstrap": "^4.6.1",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.15.0",
+
+angular.json: 
+  "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
