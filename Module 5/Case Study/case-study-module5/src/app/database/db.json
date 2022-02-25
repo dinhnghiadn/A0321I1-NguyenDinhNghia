@@ -1,0 +1,82 @@
+{
+  "customerType": [
+    {
+      "id": 1,
+      "typeName": "Diamond"
+    },
+    {
+      "id": 2,
+      "typeName": "Platinum"
+    },
+    {
+      "id": 3,
+      "typeName": "Gold"
+    },
+    {
+      "id": 4,
+      "typeName": "Silver"
+    },
+    {
+      "id": 5,
+      "typeName": "Member"
+    }
+  ],
+  "customer": [
+    {
+      "id": 1,
+      "name": "Nguyen Van CD",
+      "birthday": "1992-05-31",
+      "gender": 1,
+      "idCard": "201125555",
+      "phone": "0905192333",
+      "email": "vanc@gmail.com",
+      "customerType": {
+        "id": 3,
+        "typeName": "Gold"
+      },
+      "address": "Ha Noi"
+    },
+    {
+      "id": 2,
+      "name": "Nguyen Van B",
+      "birthday": "1995-04-19",
+      "gender": 1,
+      "idCard": "201123321",
+      "phone": "0905192212",
+      "email": "vanb@gmail.com",
+      "customerType": {
+        "id": 1,
+        "typeName": "Diamond"
+      },
+      "address": "Ha Noi"
+    },
+    {
+      "id": 3,
+      "name": "Nguyen Van C",
+      "birthday": "1991-12-30",
+      "gender": 3,
+      "idCard": "201112621",
+      "phone": "0905168712",
+      "email": "vanc@gmail.com",
+      "customerType": {
+        "id": 2,
+        "typeName": "Platinum"
+      },
+      "address": "Nha Trang"
+    },
+    {
+      "id": "10",
+      "name": "Nguyen Van CDE",
+      "birthday": "2022-02-03",
+      "gender": "1",
+      "idCard": "201949111",
+      "phone": "0905111222",
+      "email": "akakasd@gmail.com",
+      "customerType": {
+        "id": 4,
+        "typeName": "Silver"
+      },
+      "address": "Quang Tri"
+    }
+  ]
+}

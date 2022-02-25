@@ -1,0 +1,75 @@
+<form [formGroup]="formSearch" (ngSubmit)="search()">
+  <h2>Tìm kiếm khách Hàng</h2>
+  Name <input formControlName="name">
+  Email <input formControlName="email">
+  Customer Type <input formControlName="customerType">
+  <button class="btn btn-success ml-1" >Search</button>
+</form>
+
+<div>
+  <h2>Danh Sách Khách Hàng</h2>
+
+  <table class="table table-striped">
+  <thead>
+  <th>Id</th>
+  <th>Name</th>
+  <th>Birthday</th>
+  <th>Gender</th>
+  <th>ID Card</th>
+  <th>Phone number</th>
+  <th>Email</th>
+  <th>Customer type</th>
+  <th>Address</th>
+  <th>Action</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let cus of customerList| paginate: { itemsPerPage: 2, currentPage: page}">
+    <td>{{cus.id}}</td>
+    <td>{{cus.name}}</td>
+    <td>{{cus.birthday | date: 'dd/MM/yyyy'}}</td>
+    <td>
+      <span *ngIf="cus.gender == 0">Nam</span>
+      <span *ngIf="cus.gender == 1">Nữ</span>
+      <span *ngIf="cus.gender == 3">LGBT</span>
+    </td>
+    <td>{{cus.idCard}}</td>
+    <td>{{cus.phone}}</td>
+    <td>{{cus.email}}</td>
+    <td>{{cus.customerType.typeName}}</td>
+    <td>{{cus.address}}</td>
+    <td>
+      <button class="btn btn-sm btn-warning mr-2"
+              [routerLink]="['/edit-customer/'+cus.id]">Sửa
+      </button>
+      <button data-toggle="modal" data-target="#idModal" class="btn btn-sm btn-danger"
+              (click)="getCustomerName(cus.id)">Xóa
+      </button>
+    </td>
+
+  </tr>
+  </tbody>
+</table>
+  <button class="btn btn-success" [routerLink]="['/create-customer']">Thêm Mới</button>
+<pagination-controls (pageChange)="page = $event"></pagination-controls>
+  <div class="modal fade" id="idModal" tabindex="-1" role="dialog"
+       aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Thông Báo!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Bạn có chắc chắn muốn xóa: {{name}} không?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy bỏ</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="deleteCustomer(id)">Xóa</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,79 @@
+<h3 class="text-center">Chỉnh Sửa Thông Tin Khách Hàng</h3>
+<form [formGroup]="formEdit">
+  <div class="mb-3 form-group">
+    <label  class="form-label">Id</label>
+    <input type="text" class="form-control" formControlName="id" readonly>
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Name</label>
+    <input type="text" class="form-control" formControlName="name" >
+    <p *ngIf="formEdit.controls.name.errors?.required &&
+                  formEdit.controls.name.touched"
+       class="text-danger">Vui lòng nhập họ và tên</p>
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Birthday</label>
+    <input type="date" class="form-control" formControlName="birthday" >
+    <p *ngIf="formEdit.controls.birthday.errors?.required &&
+                  formEdit.controls.birthday.touched"
+       class="text-danger">Vui lòng nhập ngày sinh</p>
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Gender</label>
+    <input type="text" class="form-control" formControlName="gender" >
+    <p *ngIf="formEdit.controls.gender.errors?.required &&
+                  formEdit.controls.gender.touched"
+       class="text-danger">Vui lòng chọn giới tính</p>
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">ID Card</label>
+    <input type="text" class="form-control" formControlName="idCard" >
+    <p *ngIf="formEdit.controls.idCard.errors?.required &&
+                  formEdit.controls.idCard.touched"
+       class="text-danger">Vui lòng nhập số cmnd</p>
+    <p *ngIf="formEdit.controls.idCard.errors?.pattern &&
+                  formEdit.controls.idCard.touched"
+       class="text-danger">Số CMND không đúng định dạng</p>
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Phone number</label>
+    <input type="text" class="form-control" formControlName="phone" >
+    <p *ngIf="formEdit.controls.phone.errors?.required &&
+                  formEdit.controls.phone.touched"
+       class="text-danger">Vui lòng nhập số điện thoại</p>
+    <p *ngIf="formEdit.controls.phone.errors?.pattern &&
+                  formEdit.controls.phone.touched"
+       class="text-danger">Số điện thoại không đúng định dạng</p>
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Email</label>
+    <input type="email" class="form-control" formControlName="email" >
+    <p *ngIf="formEdit.controls.email.errors?.required &&
+                  formEdit.controls.email.touched"
+       class="text-danger">Vui lòng nhập email</p>
+    <p *ngIf="formEdit.controls.email.errors?.email &&
+                  formEdit.controls.email.touched"
+       class="text-danger">Email không đúng định dạng</p>
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Customer Type</label>
+    <select [compareWith]="compareFn" class="form-control" formControlName="customerType">
+      <ng-container *ngFor="let customerType of listCustomerType">
+        <option [ngValue]="customerType">{{customerType.typeName}}</option>
+      </ng-container>
+    </select>
+    <p *ngIf="formEdit.controls.customerType.errors?.required &&
+                  formEdit.controls.customerType.touched"
+       class="text-danger">Vui lòng chọn loại khách hàng!</p>
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Address</label>
+    <input type="email" class="form-control" formControlName="address" >
+    <p *ngIf="formEdit.controls.address.errors?.required &&
+                  formEdit.controls.address.touched"
+       class="text-danger">Vui lòng nhập địa chỉ</p>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+</form>

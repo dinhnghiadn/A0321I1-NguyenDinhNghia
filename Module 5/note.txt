@@ -11,3 +11,6 @@ angular.json:
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
+
+npm i -save bootstrap
+npm i -save jquery

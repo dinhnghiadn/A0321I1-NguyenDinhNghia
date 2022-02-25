@@ -18,23 +18,15 @@ export class HackerNewsComponent  {
   //   this.article.title = document.getElementById('article-title').value;
   //   this.article.url = document.getElementById('article-url').value;
   // }
-  articleForm: Article = {
-    title: '',
-    url: ''
-  } ;
-  // handleViewClick(art: Article) {
-  //   this.article = art ;
-  //   this.article.title = (document.getElementById('art-title') as HTMLInputElement).value;
-  //   this.article.url = (document.getElementById('art-url') as HTMLInputElement).value;
-  // }
+  // articleForm: Article = {
+  //   title: '',
+  //   url: ''
+  // } ;
 
-  handleClick() {
-    articleList.push(this.articleForm);
-    this.articles = articleList;
-    this.articleForm = {
-      title: '',
-      url: ''
-    };
+
+  handleViewClick(art: Article) {
+    this.article = art ;
+    this.article.title = (document.getElementById('art-title') as HTMLInputElement).value;
+    this.article.url = (document.getElementById('art-url') as HTMLInputElement).value;
   }
-
 }
